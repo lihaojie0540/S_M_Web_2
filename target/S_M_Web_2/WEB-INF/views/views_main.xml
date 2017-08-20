@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template" template="/WEB-INF/views/main_template.jsp">
+    </definition>
+
+    <definition name="home" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/home.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+    <definition name="login" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/remember.jsp" />
+    </definition>
+
+    <definition name="register" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/register.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/remember.jsp" />
+    </definition>
+
+    <definition name="admin" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/admin.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/remember.jsp" />
+    </definition>
+
+    <definition name="404" template="/WEB-INF/views/errorpages/404.jsp"></definition>
+
+    <definition name="accessdenied" template="/WEB-INF/views/errorpages/access_denied.jsp"></definition>
+
+</tiles-definitions>

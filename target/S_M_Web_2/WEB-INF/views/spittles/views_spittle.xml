@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template" template="/WEB-INF/views/main_template.jsp">
+    </definition>
+
+    <definition name="spittles/list" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/tiles/signin.jsp" />
+        <put-attribute name="side" value="" />
+    </definition>
+
+    <definition name="spittles/view" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/spittles/view.jsp" />
+        <put-attribute name="side" value="" />
+    </definition>
+
+</tiles-definitions>

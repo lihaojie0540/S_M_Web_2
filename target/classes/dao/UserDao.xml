@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.UserDao">
+    <resultMap id="userReusltMap" type="dao.UserDao">
+        <id property="id" column="id" />
+        <result property="userName" column="userName" />
+        <result property="userAge" column="userAge" />
+        <result property="userAddress" column="userAddress" />
+    </resultMap>
+
+    <select id="getUser" parameterType="model.User" resultType="model.User">
+        SELECT * FROM user WHERE username=#{userName}
+    </select>
+
+    <insert id="addUser" parameterType="model.User" flushCache="true">
+        INSERT INTO user (id,userName,userAge,userAddress) VALUES (#{id},#{userName},#{userAge},#{userAddress})
+    </insert>
+
+    <update id="updateUser" parameterType="model.User" >
+        UPDATE user SET username=#{userName},userAge=#{userAge},userAddress=#{userAddress} WHERE id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+</mapper>

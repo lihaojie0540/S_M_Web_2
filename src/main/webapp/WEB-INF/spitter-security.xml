@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <mvc:annotation-driven />
+
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="mvc"/>
+
+    <security:global-method-security secured-annotations="enabled" />
+
+    <security:http auto-config="true" use-expressions="true" access-denied-page="/accessdenied">
+        <security:form-login login-page="/login"
+                             login-processing-url="/j_spring_security_check"
+                             authentication-success-handler-ref="loginSuccessHandler"
+                             authentication-failure-url="/login?login_error=t"/>
+        <security:logout logout-url="/static/j_spring_security_logout" />
+        <security:remember-me key="spitterKey" token-validity-seconds="2419200" />
+    </security:http>
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider user-service-ref="userService" />
+    </security:authentication-manager>
+    <!--查询用户是否存在  users-by-username-query-->
+    <!--查询登录用户权限  authorities-by-username-query-->
+    <security:jdbc-user-service id="userService"
+                                data-source-ref="jdbcdataSource"
+                                users-by-username-query="SELECT username,password,true from spitter where username=?"
+                                authorities-by-username-query="SELECT s.username,r.role from spitter s,role r where s.userrole = r.id and username=?"/>
+    <!--数据源-->
+    <bean id="jdbcdataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/for2017?useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+    </bean>
+</beans>
+
+
+
+

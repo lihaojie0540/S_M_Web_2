@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template" template="/WEB-INF/views/main_template.jsp">
+    </definition>
+
+    <definition name="spitters/arts" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content"   value="/WEB-INF/views/spitters/arts.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
+    </definition>
+
+    <definition name="spitters/edit" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content"   value="/WEB-INF/views/spitters/edit.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
+    </definition>
+
+    <definition name="spitters/profiles" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content"  value="/WEB-INF/views/spitters/profiles.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
+    </definition>
+
+    <definition name="spitters/spittles" extends="template">
+        <put-attribute name="top" value="/WEB-INF/views/tiles/simpleform.jsp" />
+        <put-attribute name="content"   value="/WEB-INF/views/spitters/spittles.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
+    </definition>
+
+
+</tiles-definitions>

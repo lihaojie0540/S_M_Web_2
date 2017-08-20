@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.SpittleDao">
+
+    <resultMap id="spittleResultMap" type="model.Spittle">
+        <id property="id" column="id" />
+        <result property="spitter.id" column="spitterid" />
+        <result property="spitter.username" column="spittername" />
+        <result property="text" column="text" />
+        <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
+    </resultMap>
+
+    <resultMap id="alldetail" type="model.Spittle">
+        <id property="spitterid" column="spitterid"/>
+        <result property="text" column="text" />
+        <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
+        <association property="spitter" javaType="model.Spitter">
+            <id property="id" column="id" />
+            <result property="username" column="username" />
+            <result property="password" column="password" />
+            <result property="fullname" column="fullname" />
+            <result property="email" column="email" />
+        </association>
+        <collection property="comments" ofType="model.Comment">
+            <id property="spittleid" column="spittleid"/>
+            <result property="name" column="name"/>
+            <result property="comment" column="comment"/>
+        </collection>
+    </resultMap>
+
+    <insert id="addSpittle" parameterType="model.Spittle" flushCache="true">
+        INSERT INTO spittle (spitterid,spittername,text,whens) VALUES (#{spitter.id},#{spitter.username},#{text},#{whens,jdbcType=DATE})
+    </insert>
+
+    <update id="updateSpittle" parameterType="model.Spittle" >
+        UPDATE spittle SET text=#{text},whens=#{whens} WHERE id=#{id}
+    </update>
+
+    <select id="selectalldetail" parameterType="int" resultMap="alldetail">
+        select er.username,
+               er.password,
+               er.fullname,
+               er.email,
+               el.text,
+               el.whens,
+               co.name,
+               co.comment
+        FROM   spittle el
+        LEFT JOIN spitter er on er.id = el.spitterid
+        LEFT JOIN comment co on el.id = co.spittleid
+        where el.id = #{id}
+    </select>
+
+    <select id="findspitter" parameterType="int" resultMap="spittleResultMap">
+        SELECT spittername from spittle where id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,842 @@
+2017-08-14 00:39:29,860 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Sun Aug 13 17:27:24 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 00:39:30,421 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:05:05,499 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 11:05:05,505 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:05:05 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:05:05,512 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 11:05:05,616 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:05:05,665 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:05:05,665 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 11:05:05,666 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 11:05:05,666 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 11:05:05,666 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 11:05:05,666 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 11:05:05,667 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:05:05,668 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 11:05:05,668 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 11:05:05,668 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 11:05:05,669 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 11:05:05,854 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@26ee762a: startup date [Mon Aug 14 11:05:05 CST 2017]; root of context hierarchy
+2017-08-14 11:05:05,855 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 11:05:06,337 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:05:06,498 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 11:05:07,355 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,385 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,391 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,437 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 11:05:07,488 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:05:07,675 [ INFO ] FrameworkServlet 'spitter': initialization completed in 2176 ms
+2017-08-14 11:05:07,801 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,843 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,849 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,863 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,863 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,864 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,864 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,864 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:05:07,864 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:06:45,247 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:05:05 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:06:45,254 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:07:59,703 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 11:07:59,708 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:07:59 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:07:59,709 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 11:07:59,769 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:07:59,789 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:07:59,789 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 11:07:59,790 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 11:07:59,790 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 11:07:59,790 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 11:07:59,790 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 11:07:59,792 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:07:59,792 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 11:07:59,793 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 11:07:59,793 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 11:07:59,793 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 11:08:00,095 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9c677b: startup date [Mon Aug 14 11:08:00 CST 2017]; root of context hierarchy
+2017-08-14 11:08:00,096 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 11:08:00,197 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:08:00,228 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 11:08:00,873 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:00,873 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:00,873 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:00,886 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 11:08:00,904 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:08:00,968 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1265 ms
+2017-08-14 11:08:01,025 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,046 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,050 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,053 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,056 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,056 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,056 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,057 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:08:01,057 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:11:47,653 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:07:59 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:11:47,664 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:11:59,461 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 11:11:59,466 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:11:59 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:11:59,467 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 11:11:59,523 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:11:59,540 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:11:59,541 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 11:11:59,541 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 11:11:59,541 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 11:11:59,541 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 11:11:59,542 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 11:11:59,543 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:11:59,543 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 11:11:59,543 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 11:11:59,544 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 11:11:59,544 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 11:11:59,805 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@73207f00: startup date [Mon Aug 14 11:11:59 CST 2017]; root of context hierarchy
+2017-08-14 11:11:59,806 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 11:11:59,881 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:11:59,909 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 11:12:00,377 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,377 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,378 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,391 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 11:12:00,408 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:12:00,468 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1007 ms
+2017-08-14 11:12:00,527 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,542 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,545 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,548 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,549 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,549 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,550 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,550 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:12:00,550 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:30:54,751 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:11:59 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:30:54,758 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:31:17,571 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 11:31:17,576 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:31:17 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 11:31:17,577 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 11:31:17,634 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:31:17,653 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:31:17,654 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 11:31:17,654 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 11:31:17,654 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 11:31:17,654 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 11:31:17,654 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 11:31:17,655 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 11:31:17,656 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 11:31:17,657 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 11:31:17,657 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 11:31:17,657 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 11:31:17,935 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@430a961f: startup date [Mon Aug 14 11:31:17 CST 2017]; root of context hierarchy
+2017-08-14 11:31:17,946 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 11:31:18,002 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 11:31:18,034 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 11:31:18,661 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,661 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,661 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,674 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 11:31:18,692 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 11:31:18,758 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1187 ms
+2017-08-14 11:31:18,822 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,840 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,844 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,847 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,847 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,848 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,848 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,848 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 11:31:18,848 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:55:40,620 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 11:31:17 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 13:55:40,625 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 13:57:41,751 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 13:57:41,759 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 13:57:41 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 13:57:41,765 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 13:57:41,846 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 13:57:41,868 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 13:57:41,868 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 13:57:41,868 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 13:57:41,868 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 13:57:41,869 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 13:57:41,869 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 13:57:41,870 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 13:57:41,870 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 13:57:41,871 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 13:57:41,871 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 13:57:41,871 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 13:57:42,057 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@762f2c25: startup date [Mon Aug 14 13:57:42 CST 2017]; root of context hierarchy
+2017-08-14 13:57:42,059 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 13:57:42,100 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 13:57:42,126 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 13:57:42,521 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,522 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,522 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,535 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 13:57:42,547 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 13:57:42,589 [ INFO ] FrameworkServlet 'spitter': initialization completed in 837 ms
+2017-08-14 13:57:42,630 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,644 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,646 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,649 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,650 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,650 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,650 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,650 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 13:57:42,651 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:04:39,536 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 13:57:41 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:04:39,542 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:06:08,339 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:06:08,345 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:06:08 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:06:08,347 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:06:08,407 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:06:08,425 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:06:08,425 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:06:08,425 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:06:08,425 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:06:08,425 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:06:08,426 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:06:08,427 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:06:08,427 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:06:08,427 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:06:08,428 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:06:08,428 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:06:08,536 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ff81834: startup date [Mon Aug 14 14:06:08 CST 2017]; root of context hierarchy
+2017-08-14 14:06:08,537 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:06:08,604 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:06:08,646 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:06:09,075 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,075 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,076 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,085 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:06:09,101 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:06:09,156 [ INFO ] FrameworkServlet 'spitter': initialization completed in 816 ms
+2017-08-14 14:06:09,215 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,230 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,233 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,236 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,236 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,237 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,237 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,237 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:06:09,238 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:20,074 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:06:08 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:08:20,075 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:08:31,026 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:08:31,031 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:08:31 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:08:31,032 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:08:31,092 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:08:31,109 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:08:31,109 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:08:31,109 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:08:31,109 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:08:31,110 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:08:31,110 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:08:31,111 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:08:31,111 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:08:31,111 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:08:31,112 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:08:31,112 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:08:31,272 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d440031: startup date [Mon Aug 14 14:08:31 CST 2017]; root of context hierarchy
+2017-08-14 14:08:31,273 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:08:31,321 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:08:31,349 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:08:31,800 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,801 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,801 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,814 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:08:31,832 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:08:31,887 [ INFO ] FrameworkServlet 'spitter': initialization completed in 860 ms
+2017-08-14 14:08:31,943 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,958 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,961 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,964 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,965 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,965 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,965 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,966 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:08:31,966 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:26:40,030 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:08:31 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:26:40,038 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:35:36,462 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:35:36,471 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:35:36 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:35:36,472 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:35:36,613 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:35:36,664 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:35:36,664 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:35:36,664 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:35:36,664 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:35:36,664 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:35:36,665 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:35:36,666 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:35:36,666 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:35:36,666 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:35:36,667 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:35:36,681 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:35:37,021 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@55f21ece: startup date [Mon Aug 14 14:35:37 CST 2017]; root of context hierarchy
+2017-08-14 14:35:37,022 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:35:37,122 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:35:37,366 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:35:38,017 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,017 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,017 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,052 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:35:38,083 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:35:38,162 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1699 ms
+2017-08-14 14:35:38,224 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,267 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,276 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,283 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,284 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,284 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,285 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,285 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:35:38,285 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:28,984 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:35:36 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:40:28,990 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:40:40,146 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:40:40,152 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:40:40 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:40:40,156 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:40:40,218 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:40:40,238 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:40:40,238 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:40:40,239 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:40:40,239 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:40:40,239 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:40:40,239 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:40:40,241 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:40:40,241 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:40:40,242 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:40:40,242 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:40:40,242 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:40:40,474 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@569544c0: startup date [Mon Aug 14 14:40:40 CST 2017]; root of context hierarchy
+2017-08-14 14:40:40,475 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:40:40,519 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:40:40,545 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:40:41,027 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,028 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,028 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,044 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:40:41,062 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:40:41,117 [ INFO ] FrameworkServlet 'spitter': initialization completed in 970 ms
+2017-08-14 14:40:41,171 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,186 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,189 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,193 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,193 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,193 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,194 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,194 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:40:41,194 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:00,767 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:40:40 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:46:00,772 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:46:13,522 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:46:13,527 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:46:13 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:46:13,529 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:46:13,630 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:46:13,659 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:46:13,660 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:46:13,660 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:46:13,660 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:46:13,660 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:46:13,661 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:46:13,662 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:46:13,662 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:46:13,664 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:46:13,664 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:46:13,664 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:46:13,941 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@56c15c4: startup date [Mon Aug 14 14:46:13 CST 2017]; root of context hierarchy
+2017-08-14 14:46:13,942 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:46:13,984 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:46:14,015 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:46:14,464 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,465 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,465 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,477 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:46:14,489 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:46:14,542 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1020 ms
+2017-08-14 14:46:14,634 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,676 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,682 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,691 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,698 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,698 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,698 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,699 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:46:14,699 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:47:41,819 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:46:13 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:47:41,831 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:51:44,210 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:51:44,215 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:51:44 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:51:44,217 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:51:44,281 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:51:44,300 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:51:44,301 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:51:44,301 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:51:44,301 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:51:44,301 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:51:44,301 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:51:44,303 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:51:44,303 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:51:44,305 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:51:44,305 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:51:44,306 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:51:44,555 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4dc2d17: startup date [Mon Aug 14 14:51:44 CST 2017]; root of context hierarchy
+2017-08-14 14:51:44,557 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:51:44,600 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:51:44,624 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:51:45,187 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,187 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,188 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,201 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:51:45,223 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:51:45,289 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1078 ms
+2017-08-14 14:51:45,349 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,366 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,369 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,373 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,374 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,374 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,375 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,375 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:51:45,375 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:54:48,184 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:51:44 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:54:48,192 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:55:00,713 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 14:55:00,718 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:55:00 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 14:55:00,720 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 14:55:00,775 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:55:00,792 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:55:00,793 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 14:55:00,793 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 14:55:00,793 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 14:55:00,793 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 14:55:00,793 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 14:55:00,794 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 14:55:00,795 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 14:55:00,795 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 14:55:00,796 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 14:55:00,796 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 14:55:01,013 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4571331a: startup date [Mon Aug 14 14:55:01 CST 2017]; root of context hierarchy
+2017-08-14 14:55:01,017 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 14:55:01,126 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 14:55:01,196 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 14:55:02,026 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,028 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,028 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,052 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 14:55:02,077 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 14:55:02,148 [ INFO ] FrameworkServlet 'spitter': initialization completed in 1434 ms
+2017-08-14 14:55:02,209 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,235 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,241 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,251 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,252 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,253 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,253 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,253 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:02,254 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 14:55:06,331 [ ERROR ] Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:141)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:168)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getPropertyPath(AbstractDataBoundFormElementTag.java:188)
+	at org.springframework.web.servlet.tags.form.LabelTag.autogenerateFor(LabelTag.java:130)
+	at org.springframework.web.servlet.tags.form.LabelTag.resolveFor(LabelTag.java:120)
+	at org.springframework.web.servlet.tags.form.LabelTag.writeTagContent(LabelTag.java:90)
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:84)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspx_meth_sf_005flabel_005f0(edit_jsp.java:345)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspService(edit_jsp.java:130)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:603)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:542)
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955)
+	at org.apache.jasper.runtime.PageContextImpl.doInclude(PageContextImpl.java:688)
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:682)
+	at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:123)
+	at org.apache.tiles.request.AbstractViewRequest.dispatch(AbstractViewRequest.java:47)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.request.render.ChainedDelegateRenderer.render(ChainedDelegateRenderer.java:68)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.template.InsertAttributeModel.renderAttribute(InsertAttributeModel.java:188)
+	at org.apache.tiles.template.InsertAttributeModel.execute(InsertAttributeModel.java:132)
+	at org.apache.tiles.jsp.taglib.InsertAttributeTag.doTag(InsertAttributeTag.java:299)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspx_meth_t_005finsertAttribute_005f1(main_005ftemplate_jsp.java:384)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspService(main_005ftemplate_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:485)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:337)
+	at org.apache.tiles.request.servlet.ServletRequest.forward(ServletRequest.java:265)
+	at org.apache.tiles.request.servlet.ServletRequest.doForward(ServletRequest.java:228)
+	at org.apache.tiles.request.AbstractClientRequest.dispatch(AbstractClientRequest.java:57)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:397)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:238)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:221)
+	at org.apache.tiles.renderer.DefinitionRenderer.render(DefinitionRenderer.java:59)
+	at org.springframework.web.servlet.view.tiles3.TilesView.renderMergedOutputModel(TilesView.java:114)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:266)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1225)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1012)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:931)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:822)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:807)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:139)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:442)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1082)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-14 14:59:06,418 [ ERROR ] Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:141)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:168)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getPropertyPath(AbstractDataBoundFormElementTag.java:188)
+	at org.springframework.web.servlet.tags.form.LabelTag.autogenerateFor(LabelTag.java:130)
+	at org.springframework.web.servlet.tags.form.LabelTag.resolveFor(LabelTag.java:120)
+	at org.springframework.web.servlet.tags.form.LabelTag.writeTagContent(LabelTag.java:90)
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:84)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspx_meth_sf_005flabel_005f0(edit_jsp.java:345)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspService(edit_jsp.java:130)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:603)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:542)
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955)
+	at org.apache.jasper.runtime.PageContextImpl.doInclude(PageContextImpl.java:688)
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:682)
+	at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:123)
+	at org.apache.tiles.request.AbstractViewRequest.dispatch(AbstractViewRequest.java:47)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.request.render.ChainedDelegateRenderer.render(ChainedDelegateRenderer.java:68)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.template.InsertAttributeModel.renderAttribute(InsertAttributeModel.java:188)
+	at org.apache.tiles.template.InsertAttributeModel.execute(InsertAttributeModel.java:132)
+	at org.apache.tiles.jsp.taglib.InsertAttributeTag.doTag(InsertAttributeTag.java:299)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspx_meth_t_005finsertAttribute_005f1(main_005ftemplate_jsp.java:384)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspService(main_005ftemplate_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:485)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:337)
+	at org.apache.tiles.request.servlet.ServletRequest.forward(ServletRequest.java:265)
+	at org.apache.tiles.request.servlet.ServletRequest.doForward(ServletRequest.java:228)
+	at org.apache.tiles.request.AbstractClientRequest.dispatch(AbstractClientRequest.java:57)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:397)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:238)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:221)
+	at org.apache.tiles.renderer.DefinitionRenderer.render(DefinitionRenderer.java:59)
+	at org.springframework.web.servlet.view.tiles3.TilesView.renderMergedOutputModel(TilesView.java:114)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:266)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1225)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1012)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:931)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:822)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:807)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:139)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:442)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1082)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-14 15:12:17,731 [ ERROR ] Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'spitter' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:141)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getBindStatus(AbstractDataBoundFormElementTag.java:168)
+	at org.springframework.web.servlet.tags.form.AbstractDataBoundFormElementTag.getPropertyPath(AbstractDataBoundFormElementTag.java:188)
+	at org.springframework.web.servlet.tags.form.LabelTag.autogenerateFor(LabelTag.java:130)
+	at org.springframework.web.servlet.tags.form.LabelTag.resolveFor(LabelTag.java:120)
+	at org.springframework.web.servlet.tags.form.LabelTag.writeTagContent(LabelTag.java:90)
+	at org.springframework.web.servlet.tags.form.AbstractFormTag.doStartTagInternal(AbstractFormTag.java:84)
+	at org.springframework.web.servlet.tags.RequestContextAwareTag.doStartTag(RequestContextAwareTag.java:80)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspx_meth_sf_005flabel_005f0(edit_jsp.java:345)
+	at org.apache.jsp.WEB_002dINF.views.spitters.edit_jsp._jspService(edit_jsp.java:130)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:603)
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:542)
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955)
+	at org.apache.jasper.runtime.PageContextImpl.doInclude(PageContextImpl.java:688)
+	at org.apache.jasper.runtime.PageContextImpl.include(PageContextImpl.java:682)
+	at org.apache.tiles.request.jsp.JspRequest.doInclude(JspRequest.java:123)
+	at org.apache.tiles.request.AbstractViewRequest.dispatch(AbstractViewRequest.java:47)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.request.render.ChainedDelegateRenderer.render(ChainedDelegateRenderer.java:68)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.template.InsertAttributeModel.renderAttribute(InsertAttributeModel.java:188)
+	at org.apache.tiles.template.InsertAttributeModel.execute(InsertAttributeModel.java:132)
+	at org.apache.tiles.jsp.taglib.InsertAttributeTag.doTag(InsertAttributeTag.java:299)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspx_meth_t_005finsertAttribute_005f1(main_005ftemplate_jsp.java:384)
+	at org.apache.jsp.WEB_002dINF.views.main_005ftemplate_jsp._jspService(main_005ftemplate_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:747)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:485)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:337)
+	at org.apache.tiles.request.servlet.ServletRequest.forward(ServletRequest.java:265)
+	at org.apache.tiles.request.servlet.ServletRequest.doForward(ServletRequest.java:228)
+	at org.apache.tiles.request.AbstractClientRequest.dispatch(AbstractClientRequest.java:57)
+	at org.apache.tiles.request.render.DispatchRenderer.render(DispatchRenderer.java:47)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:259)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:397)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:238)
+	at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:221)
+	at org.apache.tiles.renderer.DefinitionRenderer.render(DefinitionRenderer.java:59)
+	at org.springframework.web.servlet.view.tiles3.TilesView.renderMergedOutputModel(TilesView.java:114)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:266)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1225)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1012)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:931)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:822)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:807)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:139)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:442)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1082)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-14 15:13:20,456 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 14:55:00 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 15:13:20,460 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 15:13:32,785 [ INFO ] FrameworkServlet 'spitter': initialization started
+2017-08-14 15:13:32,789 [ INFO ] Refreshing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 15:13:32 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 15:13:32,790 [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/spitter-servlet.xml]
+2017-08-14 15:13:32,849 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 15:13:32,868 [ INFO ] Mapped "{[/ || /home],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showHomePage(java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 15:13:32,868 [ INFO ] Mapped "{[/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showLoginPage()
+2017-08-14 15:13:32,868 [ INFO ] Mapped "{[/admin],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAdminPage()
+2017-08-14 15:13:32,868 [ INFO ] Mapped "{[/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showRegisterPage()
+2017-08-14 15:13:32,869 [ INFO ] Mapped "{[/404],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showPageNotFound()
+2017-08-14 15:13:32,869 [ INFO ] Mapped "{[/accessdenied],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.HomeController.showAccessDeniedPage()
+2017-08-14 15:13:32,870 [ INFO ] Mapped "{[/spitters/spittles/{username} || /spitters/{username}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.listSpittlesForSpitter(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2017-08-14 15:13:32,870 [ INFO ] Mapped "{[/spitters/{username}],methods=[GET],params=[edit],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.editSpitterProfie(java.lang.String,org.springframework.ui.Model)
+2017-08-14 15:13:32,871 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.lsitSpitters(int,int,java.util.Map<java.lang.String, java.util.List<model.Spitter>>)
+2017-08-14 15:13:32,871 [ INFO ] Mapped "{[/spitters],methods=[GET],params=[new],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.createSpitterProfile(org.springframework.ui.Model)
+2017-08-14 15:13:32,871 [ INFO ] Mapped "{[/spitters],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String mvc.SpitterController.addSpitterFromForm(model.Spitter,org.springframework.validation.BindingResult,org.springframework.web.multipart.MultipartFile)
+2017-08-14 15:13:33,058 [ INFO ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a386986: startup date [Mon Aug 14 15:13:33 CST 2017]; root of context hierarchy
+2017-08-14 15:13:33,059 [ INFO ] Loading XML bean definitions from class path resource [spitter-mybatis.xml]
+2017-08-14 15:13:33,103 [ INFO ] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-08-14 15:13:33,132 [ INFO ] Loaded JDBC driver: org.gjt.mm.mysql.Driver
+2017-08-14 15:13:33,676 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,676 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,676 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,693 [ INFO ] Found JSP 2.1 ExpressionFactory
+2017-08-14 15:13:33,711 [ INFO ] Publishing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
+2017-08-14 15:13:33,766 [ INFO ] FrameworkServlet 'spitter': initialization completed in 981 ms
+2017-08-14 15:13:33,827 [ WARN ] No supported matching language for locale "main". Using jndi:/localhost/spitter/WEB-INF/views/views_main.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,843 [ WARN ] No supported matching language for locale "spittle". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,845 [ WARN ] No supported matching language for locale "spitter". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,849 [ WARN ] No supported matching language for locale "main_zh". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,849 [ WARN ] No supported matching language for locale "spittle_zh". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,850 [ WARN ] No supported matching language for locale "spitter_zh". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,850 [ WARN ] No supported matching language for locale "main_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/views_main_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,850 [ WARN ] No supported matching language for locale "spittle_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spittles/views_spittle_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 15:13:33,850 [ WARN ] No supported matching language for locale "spitter_zh_CN". Using jndi:/localhost/spitter/WEB-INF/views/spitters/views_spitter_zh_CN.xml as a non-localized resource path. see TILES-571
+2017-08-14 16:04:56,259 [ INFO ] Closing WebApplicationContext for namespace 'spitter-servlet': startup date [Mon Aug 14 15:13:32 CST 2017]; parent: Root WebApplicationContext
+2017-08-14 16:04:56,265 [ INFO ] Removing TilesContext for context: org.springframework.web.servlet.view.tiles3.SpringWildcardServletTilesApplicationContext
