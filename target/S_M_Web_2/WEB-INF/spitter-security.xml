@@ -34,7 +34,7 @@
     <security:jdbc-user-service id="userService"
                                 data-source-ref="jdbcdataSource"
                                 users-by-username-query="SELECT username,password,true from spitter where username=?"
-                                authorities-by-username-query="SELECT s.username,r.role from spitter s,role r where s.userrole = r.id and username=?"/>
+                                authorities-by-username-query="SELECT s.username,r.role from spitter s,role r,role_spitter rs where s.id = rs.spitter_id and r.id = rs.role_id and username=?"/>
     <!--数据源-->
     <bean id="jdbcdataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
