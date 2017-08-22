@@ -2,7 +2,7 @@ package model;
 
 /**
  * @Author: haojie
- * @Description: 进度条
+ * @Description: 供进度条使用
  * @Date: Created in 上午10:54 17-8-21
  */
 public class Progress {

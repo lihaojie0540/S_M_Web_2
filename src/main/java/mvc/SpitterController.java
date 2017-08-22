@@ -169,14 +169,18 @@ public class SpitterController {
      * @Date: 下午3:58 17-8-14
      */
     private void saveImage(String filename, MultipartFile iamge) throws ImageUploadException {
+        boolean flag = false;
         try {
             String webRootPath = "/home/amarsoft/neon_workspace/S_M_Web_2/src/main/webapp";
             File file = new File(webRootPath + "/resources/images/" + filename);
             FileUtils.writeByteArrayToFile(file, iamge.getBytes());
+            flag = true;
         } catch (IOException e) {
             throw new ImageUploadException("Unable to save iamge", e);
         }
     }
+
+
 
 
 }
