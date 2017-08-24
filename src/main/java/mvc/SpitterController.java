@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import service.SpitterService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,16 +73,17 @@ public class SpitterController {
      */
     @RequestMapping(value = "/{username}/update", method = RequestMethod.POST)
     public String updateSpitterInformation(@Validated Spitter spitter,
-                                         BindingResult bindingResult,
-                                         @RequestParam(value = "image", required = false)
-                                                     MultipartFile image) {
+                                           BindingResult bindingResult,
+                                           @RequestParam(value = "image", required = false)
+                                           MultipartFile image,
+                                           HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return "redirect:/spitters/" + spitter.getUsername() + "/edit";
         }
         try {
             if (!image.isEmpty()) {
                 validateImage(image);
-                saveImage(image.getOriginalFilename(), image);
+                saveImage(image.getOriginalFilename(), image, request);
             }
         } catch (Exception e) {
             bindingResult.reject(e.getMessage());
@@ -133,17 +135,15 @@ public class SpitterController {
     public String addSpitterFromForm(@Validated Spitter spitter,
                                      BindingResult bindingResult,
                                      @RequestParam(value = "image", required = false)
-                                     MultipartFile image) {
+                                     MultipartFile image,
+                                     HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return "register";
         }
         try {
-            System.out.println(image.getName());
             if (!image.isEmpty()) {
-                System.out.println(image.getOriginalFilename());
                 validateImage(image);
-                System.out.println("out validate, prepare for save image");
-                saveImage(image.getOriginalFilename(), image);
+                saveImage(image.getOriginalFilename(), image, request);
             }
         } catch (Exception e) {
             bindingResult.reject(e.getMessage());
@@ -151,6 +151,7 @@ public class SpitterController {
         }
         spitter.setUserportrait(image.getOriginalFilename());
         spitterService.saveSpitter(spitter);
+        System.out.println("redirect:/spitters/" + spitter.getUsername() + "/spittles");
         return "redirect:/spitters/" + spitter.getUsername() + "/spittles";
     }
 
@@ -168,13 +169,13 @@ public class SpitterController {
      * @Description 保存用户上传的图像
      * @Date: 下午3:58 17-8-14
      */
-    private void saveImage(String filename, MultipartFile iamge) throws ImageUploadException {
-        boolean flag = false;
+    private void saveImage(String filename, MultipartFile image, HttpServletRequest request) throws ImageUploadException {
         try {
-            String webRootPath = "/home/amarsoft/neon_workspace/S_M_Web_2/src/main/webapp";
-            File file = new File(webRootPath + "/resources/images/" + filename);
-            FileUtils.writeByteArrayToFile(file, iamge.getBytes());
-            flag = true;
+            String path = "/resources/images";
+            String realPath = request.getSession().getServletContext().getRealPath(path);
+            System.out.println("realPath=" + realPath);
+            File file = new File(realPath + "/" + image.getOriginalFilename());
+            FileUtils.writeByteArrayToFile(file, image.getBytes());
         } catch (IOException e) {
             throw new ImageUploadException("Unable to save iamge", e);
         }

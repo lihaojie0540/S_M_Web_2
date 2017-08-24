@@ -1,12 +1,9 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="t" uri="http://tiles.apache.org/tags-tiles" %>
-
 <link href="<s:url value="/resources/css/bootstrap.css.map"/>" rel="stylesheet">
 <link href="<s:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
-
 <script src="<s:url value="/resources/js/jquery-3.2.1.min.js"/>"></script>
 <script src="<s:url value="/resources/js/bootstrap.min.js"/>"></script>
-
 <html>
 <head>
     <title>Spitter</title>

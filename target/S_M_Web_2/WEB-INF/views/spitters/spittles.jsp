@@ -11,7 +11,7 @@
             <s:url value="/spitters/${spittle.spitter.username}" var="spitter_url" />
             <tr>
                 <td>
-                    <img src="<s:url value="/resources/images/${modelsp.userportrait}"/>"
+                    <img src="/spitter/resources/images/${modelsp.userportrait}"
                          width="48"
                          border="0"
                          align="middle"

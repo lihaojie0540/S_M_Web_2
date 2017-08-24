@@ -38,6 +38,6 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" p:maxUploadSize="500000"/>
+    <bean id="multipartResolver" class="mvc.CustomMultipartResolver" p:maxUploadSize="500000000"/>
 
 </beans>

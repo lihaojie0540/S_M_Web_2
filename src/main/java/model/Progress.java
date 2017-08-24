@@ -36,6 +36,6 @@ public class Progress {
 
     @Override
     public String toString() {
-        return "Progress [bytesRead=" + bytesRead + ",contentLength=" + ",items=" + items;
+        return "Progress [bytesRead=" + bytesRead + ",contentLength=" + contentLength + ",items=" + items;
     }
 }

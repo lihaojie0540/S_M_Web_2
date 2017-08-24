@@ -30,7 +30,6 @@ public class SpittleController {
     public String deleteSpittle(@PathVariable Integer spittleid) {
         String username = spitterService.findSpitterBySpittleid(spittleid);
         spitterService.deleteSpittle(spittleid);
-        //通过spittleid找到一个username
         return "redirect:/spitters/" + username + "/spittles";
     }
 

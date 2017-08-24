@@ -55,6 +55,9 @@
                 </tr>
                 <tr>
                     <th>
+                        <div class="form-group">
+                            <img id="imageUpload" src="" with="100%" >
+                        </div>
                     </th>
                     <td>
                         <div class="form-group">
@@ -78,88 +81,51 @@
             </table>
         </fieldset>
     </sf:form>
-    <button id="hide1111" type="button">hide</button>
-    <button id="show1111" type="button">show</button>
-    <div class="form-group">
-        <img id="imageUpload" alt="uploaded picture" src="" with="100%" >
-    </div>
+
 </div>
 <script>
-
     $(function () {
-        $("#hide1111").click(function(){
-            $("#progressBar").width("0%");
-            $("#hide1111").text("hiding");
-            $("#progressBar").parent().hide();
-        });
-        $("#show1111").click(function(){
-            $("#progressBar").parent().show();
-            $("#progressBar").width("100%");
-            $("#hide1111").text("showing");
-        });
-    });
-
-    $(function () {
-        //上传按钮
         //点击上传按钮
         $("#UploadBtn").click(function(){
             $("#progressBar").width("0%");
             $("#progressBar").attr("disable",true);
             $("#progressBar").parent().show();
             $("#progressBar").parent().addClass("active");
-            $("#UploadBtn").text("uploadingggggggggggggggggggg");
-            upload("the file upload with progress");
-            //upload
+            $("#UploadBtn").text("uploading");
+            upload();
         });
         function refresh() {
             setTimeout(function () {
                 $("#UploadBtn").text("upload");
+                $("#progressBar").parent().hide();
                 $("#progressBar").removeAttr("disabled");
             },1500);
         };
-        function upload(name){
+        function upload(){
             var formData = new FormData();
-            formData.append('file',$('#file')[0].files[0]);
-            formData.append('name',name);
-            function onprogress(evt){
-                var progressBar = $("#progressBar");
-                alert("evt");
-                alert(evt.lengthComputable.toString());
-                if(evt.lengthComputable) {
-                    var completePercent = Math.round(evt.loaded / evt.total * 100);
-                    progressBar.width(completePercent + "%");
-                    $("#progressBar").text(completePercent + "%");
-                }
-            }
-            var xhr_provider = function() {
-                var xhr = jQuery.ajaxSettings.xhr();
-                if(onprogress && xhr.upload){
-                   xhr.upload.addEventListener('progerss', onprogress, false);
-                    $("#progressBar").width(100 + "%");
-                }else {
-                    alert("not in");
-                }
-                return xhr;
-            };
+            formData.append('image',$('#file')[0].files[0]);
             $.ajax({
                 url: "${pageContext.request.contextPath}/upload",
                 type: 'post',
                 data:formData,
-                processData:false,
+                processData: false,
                 contentType: false,
-                xhr:xhr_provider(),
+                xhr: function(){
+                    var xhr = $.ajaxSettings.xhr();
+                    xhr.upload.onprogress = function (e) {
+                        e = e || event;
+                        if(e.lengthComputable){
+                            var per = Math.floor((e.loaded / e.total)*100);
+                            $("#progressBar").width(per+"%");
+                        }
+                    }
+                    return xhr;
+                },
                 success: function(data){
-//                    result = $.parseJSON(data);
-//                    if (result.code == "0"){
-                        $("#UploadBtn").text("upload success");
-//                    } else if(result.code == "-4"){
-//                        $("#uploadBtn").text("不支持文件上传类型");
-//                    } else {
-//                        $("#uploadBtn").text(result.data);
-//                    }
-//                    $("#progressBar").parent().hide();
+                    $("#UploadBtn").text("upload success");
+                    $("#imageUpload").attr("src","${pageContext.request.contextPath}"+"/resources/images/"+data);
                     refresh();
-                },error: function(data){
+                },error: function(){
                     $("#UploadBtn").text("unsupport filetype");
                     refresh();
                 }
