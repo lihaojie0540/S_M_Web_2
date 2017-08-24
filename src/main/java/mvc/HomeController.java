@@ -30,6 +30,10 @@ public class HomeController {
     @RequestMapping({"/", "/home"})
     public String showHomePage(Map<String, Object> model) {
         List<Spittle> s = spitterServiceImpl.getRecentSpittles(DEFAULT_SPITTLES_PER_RESULT);
+        for (Spittle x : s) {
+            System.out.println(x.getSpitter().getUsername());
+            System.out.println(x.getSpitter().getUserportrait());
+        }
         model.put("spittles", s);
         return "home";
     }

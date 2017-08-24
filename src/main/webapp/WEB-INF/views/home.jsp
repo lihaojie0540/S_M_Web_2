@@ -16,7 +16,7 @@
             </s:url>
             <li>
                 <span class="spittleListImage">
-                    <img src="<s:url value="/resources/images/${spittle.spitter.id}.jpg"/>"
+                    <img src="/spitter/resources/images/${spittle.spitter.userportrait}"
                             width="48"
                             border="0"
                             align="middle"
