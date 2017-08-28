@@ -72,7 +72,7 @@ ol.spittle-list li:first-child {
 
 ol.spittle-list li {
 	font-size: 1.2em;
-	border-bottom: 1px solid #EEEEEE;
+	border-top: 1px solid #EEEEEE;
 	line-height: 1.1em;
 	padding: 0.7em 0 0.6em;
 	position: relative;
@@ -86,8 +86,6 @@ span.error {
 table.horizontalRuled td {
 	margin-left: 100px;
 	padding: 7px 3px;
-	border-bottom: 1px solid #BBBBBB;
-
 }
 
 table.horizontalRuled .btn-group label{
@@ -98,6 +96,8 @@ table.horizontalRuled .btn-group label{
 table#register11{
 	width: 511px;
 }
+
+
 
 * {
 	padding: 0px;
@@ -168,6 +168,10 @@ table#register11{
 
 #remember_melabs input{
 	vertical-align: middle;
+}
+
+#showSpittle{
+	border-top: 1px solid #BBBBBB;
 }
 
 #side {

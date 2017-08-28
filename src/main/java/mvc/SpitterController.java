@@ -38,9 +38,9 @@ public class SpitterController {
     public String listSpittlesForSpitter(@PathVariable String username, Map<String, Object> model, Model models) {
         Spitter spitter = spitterService.getSpitter(username);
         System.out.println("portrait" + spitter.getUserportrait());
+        models.addAttribute(spitter);
         Spittle newspittle = new Spittle();
         models.addAttribute(newspittle);
-        model.put("modelsp", spitter);
         List<Spittle> spittles = spitterService.getSpittlesForSpitter(spitter);
         model.put("modelsl", spittles);
         //添加所有推文涉及的所有评论
@@ -99,9 +99,9 @@ public class SpitterController {
      * @Date: 下午4:11 17-8-14
      */
     @RequestMapping(value = "/{username}/profiles", method = RequestMethod.GET)
-    public String showSpitterProfile(@PathVariable String username, Map<String, Object> model) {
+    public String showSpitterProfile(@PathVariable String username, Model model) {
         Spitter spitter = spitterService.getSpitter(username);
-        model.put("modelsp", spitter);
+        model.addAttribute(spitter);
         return "spitters/profiles";
     }
 
@@ -110,9 +110,9 @@ public class SpitterController {
      * @Date: 下午4:10 17-8-14
      */
     @RequestMapping(value = "/{username}/arts", method = RequestMethod.GET)
-    public String showSpitterArts(@PathVariable String username, Map<String, Object> model) {
+    public String showSpitterArts(@PathVariable String username, Model model) {
         Spitter spitter = spitterService.getSpitter(username);
-        model.put("modelsp", spitter);
+        model.addAttribute(spitter);
         return "spitters/arts";
     }
 

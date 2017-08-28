@@ -4,9 +4,7 @@
 <html>
 <head>
     <title>Spitter</title>
-    <link href="<s:url value="/resources" />/css/denied.css"
-          rel="stylesheet"
-          type="text/css" />
+    <link href="<s:url value="/resources" />/css/denied.css" rel="stylesheet" type="text/css" />
 </head>
 <body >
 </body>

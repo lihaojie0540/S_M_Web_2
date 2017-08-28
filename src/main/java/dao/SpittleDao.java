@@ -1,8 +1,11 @@
 package dao;
 
+import model.Comment;
 import model.Spittle;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public interface SpittleDao {
@@ -17,4 +20,10 @@ public interface SpittleDao {
     Spittle selectalldetail(int id);
 
     Spittle findspitter(int id);
+
+    void addComment(Comment comment);
+
+    List<Comment>selectCommnetBySpittleId(int id);
+
+    void deleteComment(int id);
 }

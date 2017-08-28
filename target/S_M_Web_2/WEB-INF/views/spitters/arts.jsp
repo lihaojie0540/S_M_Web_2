@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-show the users arts.
+    <h2>show the users arts.</h2>
 </body>
 </html>

@@ -26,4 +26,8 @@ public interface SpitterService {
 
     String findSpitterBySpittleid(int i);
     void updateSpitter(Spitter spitter);
+
+    void addComment(Comment comment);
+    List<Comment> finCommentBySpittleId(int id);
+    void deleteComment(int id);
 }

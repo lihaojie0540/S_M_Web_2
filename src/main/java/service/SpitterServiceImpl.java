@@ -54,18 +54,15 @@ public class SpitterServiceImpl implements SpitterService {
     }
 
     public List<Spittle> getSpittlesForSpitter(Spitter spitter) {
-        List<Spittle> spittles = spitterDao.getSpittlesForSpitter(spitter);
-        return spittles;
+        return spitterDao.getSpittlesForSpitter(spitter);
     }
 
     public List<Spittle> getSpittlesForSpitter(String username) {
-        Spitter spitter = spitterDao.getSpitterByUsername(username);
-        return getSpittlesForSpitter(spitter);
+        return getSpittlesForSpitter(spitterDao.getSpitterByUsername(username));
     }
 
     public Spitter getSpitter(String username) {
-        Spitter spitter = spitterDao.getSpitterByUsername(username);
-        return spitter;
+        return spitterDao.getSpitterByUsername(username);
     }
 
     public void deleteSpittle(int id) {
@@ -73,8 +70,7 @@ public class SpitterServiceImpl implements SpitterService {
     }
 
     public List<Spitter> getAllSpitters() {
-        List<Spitter> spitters = spitterDao.findAllSpitters();
-        return spitters;
+        return spitterDao.findAllSpitters();
     }
 
     public Spittle getSpittleById(int id) {
@@ -86,8 +82,18 @@ public class SpitterServiceImpl implements SpitterService {
     }
 
     public String findSpitterBySpittleid(int i) {
-        Spittle spittle = spittleDao.findspitter(i);
-        return spittle.getSpitter().getUsername();
+        return spittleDao.findspitter(i).getSpitter().getUsername();
     }
 
+    public void addComment(Comment comment) {
+        spittleDao.addComment(comment);
+    }
+
+    public List<Comment> finCommentBySpittleId(int id) {
+        return  spittleDao.selectCommnetBySpittleId(id);
+    }
+
+    public void deleteComment(int id) {
+        spittleDao.deleteComment(id);
+    }
 }

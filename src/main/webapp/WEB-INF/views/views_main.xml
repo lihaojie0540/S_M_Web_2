@@ -12,6 +12,13 @@
         <put-attribute name="side" value="/WEB-INF/views/login.jsp" />
     </definition>
 
+    <definition name="homewithsign" extends="template">
+        <put-attribute name="top" value="" />
+        <put-attribute name="content" value="/WEB-INF/views/home.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
+    </definition>
+
+
     <definition name="login" extends="template">
         <put-attribute name="top" value="" />
         <put-attribute name="content" value="/WEB-INF/views/login.jsp" />

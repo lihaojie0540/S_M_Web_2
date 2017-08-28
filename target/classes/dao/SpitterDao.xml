@@ -27,6 +27,17 @@
         <result property="comment" column="comment" />
     </resultMap>
 
+    <resultMap id="banchOfSpittleResultMap" type="model.Spittle">
+        <id property="id" column="id" />
+        <result property="text" column="text" />
+        <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
+        <association property="spitter" javaType="model.Spitter">
+            <id property="id" column="spitterid" />
+            <result property="username" column="spittername" />
+            <result property="userportrait" column="userportrait" />
+        </association>
+    </resultMap>
+
     <insert id="addSpitter" parameterType="model.Spitter" flushCache="true">
         INSERT INTO spitter (username,userportrait,password,fullname,email,updatebyemail)
         VALUES (#{username},#{userportrait},#{password},#{fullname},#{email},#{updatebyemail})
@@ -70,8 +81,16 @@
         SELECT * FROM spitter
     </select>
 
-    <select id="getABunchOfSpittles" parameterType="int" resultMap="spittleResultMap">
-        SELECT * FROM spittle order by RAND() limit #{int};
+    <select id="getABunchOfSpittles" parameterType="int" resultMap="banchOfSpittleResultMap">
+        SELECT el.id,
+               el.text,
+               el.whens,
+               el.spitterid,
+               el.spittername,
+               er.userportrait
+        FROM spittle el
+        LEFT JOIN spitter er on er.id = el.spitterid
+        order by RAND() limit #{int};
     </select>
 
     <select id="getSpittelsToDelete" parameterType="model.Spitter" resultMap="spittleResultMap">

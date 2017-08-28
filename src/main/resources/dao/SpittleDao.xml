@@ -55,4 +55,23 @@
         SELECT spittername from spittle where id = #{id}
     </select>
 
+    <resultMap id="commentResultMap" type="model.Comment">
+        <id property="id" column="id" />
+        <result property="spittleid" column="spittleid" />
+        <result property="name" column="name" />
+        <result property="comment" column="comment" />
+    </resultMap>
+
+    <insert id="addComment" parameterType="model.Comment" flushCache="true">
+        INSERT INTO comment (id,spittleid,name,comment) VALUES (#{id},#{spittleid},#{name},#{comment})
+    </insert>
+
+    <select id="selectCommnetBySpittleId" parameterType="int" resultMap="commentResultMap">
+        SELECT * FROM comment where spittleid=#{id}
+    </select>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM comment where id=#{id}
+    </delete>
+
 </mapper>

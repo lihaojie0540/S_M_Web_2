@@ -4,9 +4,7 @@
 <html>
 <head>
     <title>Spitter</title>
-    <link href="<s:url value="/resources" />/css/404.css"
-          rel="stylesheet"
-          type="text/css" />
+    <link href="<s:url value="/resources" />/css/404.css" rel="stylesheet" type="text/css" />
 </head>
 <body >
 <h2>Sorry, That Page Doesn't Exist.</h2>
