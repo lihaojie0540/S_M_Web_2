@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.SpittleDao">
 
-    <resultMap id="spittleResultMap" type="model.Spittle">
-        <id property="id" column="id" />
-        <result property="spitter.id" column="spitterid" />
-        <result property="spitter.username" column="spittername" />
-        <result property="text" column="text" />
-        <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
-    </resultMap>
+    <insert id="addSpittle" parameterType="model.Spittle" flushCache="true">
+        INSERT INTO spittle (spitterid,spittername,text,whens) VALUES (#{spitter.id},#{spitter.username},#{text},#{whens,jdbcType=DATE})
+    </insert>
+
+    <update id="updateSpittle" parameterType="model.Spittle" >
+        UPDATE spittle SET text=#{text},whens=#{whens} WHERE id=#{id}
+    </update>
 
     <resultMap id="alldetail" type="model.Spittle">
         <id property="spitterid" column="spitterid"/>
@@ -28,14 +28,6 @@
         </collection>
     </resultMap>
 
-    <insert id="addSpittle" parameterType="model.Spittle" flushCache="true">
-        INSERT INTO spittle (spitterid,spittername,text,whens) VALUES (#{spitter.id},#{spitter.username},#{text},#{whens,jdbcType=DATE})
-    </insert>
-
-    <update id="updateSpittle" parameterType="model.Spittle" >
-        UPDATE spittle SET text=#{text},whens=#{whens} WHERE id=#{id}
-    </update>
-
     <select id="selectalldetail" parameterType="int" resultMap="alldetail">
         select er.username,
                er.password,
@@ -51,9 +43,25 @@
         where el.id = #{id}
     </select>
 
+    <resultMap id="spittleResultMap" type="model.Spittle">
+        <id property="id" column="id" />
+        <result property="spitter.id" column="spitterid" />
+        <result property="spitter.username" column="spittername" />
+        <result property="text" column="text" />
+        <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
+    </resultMap>
+
     <select id="findspitter" parameterType="int" resultMap="spittleResultMap">
         SELECT spittername from spittle where id = #{id}
     </select>
+
+    <insert id="addComment" parameterType="model.Comment" flushCache="true">
+        INSERT INTO comment (id,spittleid,name,comment) VALUES (#{id},#{spittleid},#{name},#{comment})
+    </insert>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM comment where id=#{id}
+    </delete>
 
     <resultMap id="commentResultMap" type="model.Comment">
         <id property="id" column="id" />
@@ -62,16 +70,7 @@
         <result property="comment" column="comment" />
     </resultMap>
 
-    <insert id="addComment" parameterType="model.Comment" flushCache="true">
-        INSERT INTO comment (id,spittleid,name,comment) VALUES (#{id},#{spittleid},#{name},#{comment})
-    </insert>
-
     <select id="selectCommnetBySpittleId" parameterType="int" resultMap="commentResultMap">
         SELECT * FROM comment where spittleid=#{id}
     </select>
-
-    <delete id="deleteComment" parameterType="int">
-        DELETE FROM comment where id=#{id}
-    </delete>
-
 </mapper>

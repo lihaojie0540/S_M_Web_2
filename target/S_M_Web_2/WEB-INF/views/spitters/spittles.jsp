@@ -34,7 +34,9 @@
                     <div class="input-group" >
                         <input id="spitCommentIn" type="text" class="form-control">
                         <span id="spitComment" class="input-group-addon" onclick="commentsUp(${spittle.id})">coment it.</span>
-                    </div></td></tr>
+                    </div>
+                </td>
+            </tr>
         </c:forEach>
     </table>
 </div>
@@ -65,8 +67,8 @@
         $(function () {
             var formData = new FormData();
             formData.append("spittleId",w);
-            formData.append("spitterId",${spitter.id});
-            formData.append("commnet",$('#spitCommentIn').val());
+            formData.append("spitterId",${sessionSpitter.id});
+            formData.append("comment",$('#spitCommentIn').val());
             $.ajax({
                 url: "${pageContext.request.contextPath}/uploadComment",
                 type: 'post',
@@ -79,12 +81,18 @@
                         content += "<h4>"+obj.name+"</h4>"+obj.comment;
                     });
                     document.getElementById("forDetail" + w).innerHTML = content;
+                    $('#spitCommentIn').val("");
                 },error: function(Data){
                     alert("error");
                 }
             });
         });
     }
+
+    $(function () {
+        $.session.set('name', '${spitter.username}');
+        $.session.set('portrait', '${spitter.userportrait}');
+    });
 </script>
 
 

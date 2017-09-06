@@ -23,7 +23,7 @@ public interface SpittleDao {
 
     void addComment(Comment comment);
 
-    List<Comment>selectCommnetBySpittleId(int id);
-
     void deleteComment(int id);
+
+    List<Comment>selectCommnetBySpittleId(int id);
 }

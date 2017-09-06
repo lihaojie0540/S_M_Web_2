@@ -7,27 +7,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface SpitterService {
-    List<Spittle> getRecentSpittles(int count);
-    void saveSpittle(Spittle spittle);
-
     void saveSpitter(Spitter spitter);
+    void updateSpitter(Spitter spitter);
+    String findSpitterBySpittleid(int i);
     Spitter getSpitter(int id);
-    void startFollowing(Spitter follower, Spitter followee);
+    Spitter getSpitter(String username);
+    List<Spitter> getAllSpitters();
 
+    void saveSpittle(Spittle spittle);
+    void deleteSpittle(int id);
+    Spittle getSpittleById(int id);
+    List<Spittle> getRecentSpittles(int count);
     List<Spittle> getSpittlesForSpitter(Spitter spitter);
     List<Spittle> getSpittlesForSpitter(String username);
-    Spitter getSpitter(String username);
-
-    Spittle getSpittleById(int id);
-    void deleteSpittle(int id);
-
-    List<Spitter> getAllSpitters();
-    List<Comment> getAllComments(List<Integer> a);
-
-    String findSpitterBySpittleid(int i);
-    void updateSpitter(Spitter spitter);
 
     void addComment(Comment comment);
-    List<Comment> finCommentBySpittleId(int id);
     void deleteComment(int id);
+    List<Comment> getAllComments(List<Integer> a);
+    List<Comment> finCommentBySpittleId(int id);
 }

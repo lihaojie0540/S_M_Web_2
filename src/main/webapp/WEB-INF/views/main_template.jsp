@@ -4,19 +4,17 @@
 <link href="<s:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
 <script src="<s:url value="/resources/js/jquery-3.2.1.min.js"/>"></script>
 <script src="<s:url value="/resources/js/bootstrap.min.js"/>"></script>
+<script src="<s:url value="/resources/js/jquerySession.js"/>"></script>
 <html>
 <head>
     <title>Spitter</title>
-    <link href="<s:url value="/resources" />/css/spitter.css"
-          rel="stylesheet"
-          type="text/css" />
+    <link href="<s:url value="/resources" />/css/spitter.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="container">
     <div id="logal">
-        <a href="<s:url value="/home" />"><img
-            src="<s:url value="/resources" />/images/spitter_logo_50.png"
-            border="0"/></a>
+        <a href="<s:url value="/home" />">
+            <img src="<s:url value="/resources" />/images/spitter_logo_50.png" border="0"/></a>
     </div>
     <div id="top">
         <t:insertAttribute name="top" />

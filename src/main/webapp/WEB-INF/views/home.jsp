@@ -11,7 +11,7 @@
     <h3>Look at what these people are spitting right now...</h3>
     <ol class="spittle-list">
         <c:forEach var="spittle" items="${modelsl}">
-            <s:url value="/spitters/{spitterName}" var="spitter_url" >
+            <s:url value="/spitters/{spitterName}/spittles" var="spitter_url" >
                 <s:param name="spitterName" value="${spittle.spitter.username}" />
             </s:url>
             <li>

@@ -29,6 +29,4 @@
         <put-attribute name="content"   value="/WEB-INF/views/spitters/spittles.jsp" />
         <put-attribute name="side" value="/WEB-INF/views/tiles/signin.jsp" />
     </definition>
-
-
 </tiles-definitions>

@@ -10,5 +10,4 @@
         <mapper resource="dao/SpitterDao.xml" />
         <mapper resource="dao/SpittleDao.xml" />
     </mappers>
-
 </configuration>

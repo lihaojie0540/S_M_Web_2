@@ -26,7 +26,6 @@ public class CustomMultipartResolver extends CommonsMultipartResolver {
         this.progressListener = progressListener;
     }
 
-    @Override
     public MultipartParsingResult parseRequest(HttpServletRequest request) throws MultipartException {
         String encoding = determineEncoding(request);
         FileUpload fileUpload = prepareFileUpload(encoding);

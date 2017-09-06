@@ -22,19 +22,6 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
     private Map<String, Object> authDispaatcherMap = null;
     private RequestCache requestCache = new HttpSessionRequestCache();
 
-    //根据用户权限不同跳转到不同页面
-    @Override
-    public void onAuthenticationSuccess(HttpServletRequest req, HttpServletResponse rsp, Authentication authentication) throws IOException, ServletException {
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        System.out.println(userDetails.getUsername());
-        String path = req.getContextPath();
-        System.out.println("path:" + path);
-        String basepath = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + path + "/";
-        System.out.println((basepath + userDetails.getUsername()));
-        System.out.println(userDetails.getAuthorities());
-        rsp.sendRedirect(basepath + "spitters/" + userDetails.getUsername() + "/spittles");
-    }
-
     public Map<String, Object> getAuthDispaatcherMap() {
         return authDispaatcherMap;
     }
@@ -47,8 +34,18 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         return requestCache;
     }
 
-    @Override
     public void setRequestCache(RequestCache requestCache) {
         this.requestCache = requestCache;
+    }
+
+    //根据用户权限不同跳转到不同页面
+    public void onAuthenticationSuccess(HttpServletRequest req, HttpServletResponse rsp, Authentication aut) throws IOException, ServletException {
+        UserDetails userDetails = (UserDetails) aut.getPrincipal();
+        String path = req.getContextPath();
+        String basepath = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + path + "/";
+        System.out.println((basepath + userDetails.getUsername()));
+        System.out.println(userDetails.getAuthorities());
+        System.out.println("onAuthenticationSuccess");
+        rsp.sendRedirect(basepath + "spitters/loginin/" + userDetails.getUsername());
     }
 }

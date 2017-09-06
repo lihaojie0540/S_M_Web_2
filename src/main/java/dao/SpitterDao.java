@@ -18,22 +18,20 @@ public interface SpitterDao {
 
         Spitter getSpitterById(int id);
 
-        List<Spittle> getRecentSpittle(int number);
+        Spitter getSpitterByUsername(String username);
+
+        List<Spitter> findAllSpitters();
 
         void saveSpittle(Spittle spittle);
-
-        List<Spittle> getSpittlesForSpitter(Spitter spitter);
-
-        Spitter getSpitterByUsername(String username);
 
         void deleteSpittle(int id);
 
         @PostAuthorize("returnObject.spitter.username == principal.username")
         Spittle getSpittleById(int id);
 
-        List<Spitter> findAllSpitters();
+        List<Spittle> getRecentSpittle(int number);
 
-        List<Comment> findAllConments(List<Integer> a);
+        List<Spittle> getSpittlesForSpitter(Spitter spitter);
 
         //只允许拥有 ROLE_SPITTER 权限的用户进行访问
         @PreAuthorize("hasRole(SPITTER)")
@@ -45,4 +43,5 @@ public interface SpitterDao {
         @PostFilter("hasPermission(filterObject,'delete')")
         List<Spittle> getSpittelsToDelete(Spitter spitter);
 
+        List<Comment> findAllConments(List<Integer> a);
 }

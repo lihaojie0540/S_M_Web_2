@@ -31,6 +31,55 @@ public class HomeController {
     @Resource
     private SpitterService spitterServiceImpl;
 
+    /**
+     * @Description 供评论测试使用
+     * @Date: 下午4:23 17-8-25
+     */
+    @RequestMapping(value = "/uploadComment", method = RequestMethod.POST)
+    @ResponseBody
+    public String addComment(@RequestParam(required = false) String spittleId, String spitterId, String comment, HttpServletRequest req) {
+        int a = Integer.parseInt(spittleId);
+        int b = Integer.parseInt(spitterId);
+        Spitter spitter = spitterServiceImpl.getSpitter(b);
+        Comment acomment = new Comment();
+        acomment.setSpittleid(a);
+        acomment.setName(spitter.getUsername());
+        acomment.setComment(comment);
+        if (!comment.equals("")) {
+            spitterServiceImpl.addComment(acomment);
+        }
+        List<Comment> comments = spitterServiceImpl.finCommentBySpittleId(a);
+        Gson gson = new Gson();
+        return gson.toJson(comments);
+    }
+
+    /**
+     * @Description  供进度条使用
+     * @Date: 下午2:20 17-8-22
+     */
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public String addProgress(@RequestParam(required = false) MultipartFile image,
+                              HttpServletRequest request)
+            throws IOException {
+        String path = "/resources/images";
+        String realPath = request.getSession().getServletContext().getRealPath(path);
+        System.out.println("realPath=" + realPath);
+        File file = new File(realPath + "/" + image.getOriginalFilename());
+        FileUtils.writeByteArrayToFile(file, image.getBytes());
+        return image.getOriginalFilename();
+    }
+
+    @RequestMapping("/admin")
+    public String showAdminPage() {
+        return "admin";
+    }
+
+    @RequestMapping("/accessdenied")
+    public String showAccessDeniedPage() {
+        return "accessdenied";
+    }
+
     @RequestMapping({"/", "/home"})
     public String showHomePage(Map<String, Object> model) {
         List<Spittle> s = spitterServiceImpl.getRecentSpittles(DEFAULT_SPITTLES_PER_RESULT);
@@ -60,9 +109,9 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping("/admin")
-    public String showAdminPage() {
-        return "admin";
+    @RequestMapping("/404")
+    public String showPageNotFound() {
+        return "404";
     }
 
     @RequestMapping("/register")
@@ -72,54 +121,9 @@ public class HomeController {
         return "register";
     }
 
-    @RequestMapping("/404")
-    public String showPageNotFound() {
-        return "404";
-    }
-
-    @RequestMapping("/accessdenied")
-    public String showAccessDeniedPage() {
-        return "accessdenied";
-    }
 
 
-    /**
-     * @Description  仅供进度条使用
-     * @Date: 下午2:20 17-8-22
-     */
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    @ResponseBody
-    public String add(@RequestParam(required = false) MultipartFile image,
-                      HttpServletRequest request)
-                        throws IOException {
-        String path = "/resources/images";
-        String realPath = request.getSession().getServletContext().getRealPath(path);
-        System.out.println("realPath=" + realPath);
-        File file = new File(realPath + "/" + image.getOriginalFilename());
-        FileUtils.writeByteArrayToFile(file, image.getBytes());
-        return image.getOriginalFilename();
-    }
 
-    /**
-     * @Description 仅供评论测试使用
-     * @Date: 下午4:23 17-8-25
-     */
-    @RequestMapping(value = "/uploadComment", method = RequestMethod.POST)
-    @ResponseBody
-    public String addComment(@RequestParam(required = false)
-                             String spittleId, String spitterId, String commnet,
-                             HttpServletRequest request) {
-            int a = Integer.parseInt(spittleId);
-            int b = Integer.parseInt(spitterId);
-            Spitter spitter = spitterServiceImpl.getSpitter(b);
-            Comment comment = new Comment();
-            comment.setSpittleid(a);
-            comment.setName(spitter.getUsername());
-            comment.setComment(commnet);
-            if (!commnet.equals("")) spitterServiceImpl.addComment(comment);
-            List<Comment> comments = spitterServiceImpl.finCommentBySpittleId(a);
-            Gson gson = new Gson();
-            String jsonReturn = gson.toJson(comments);
-            return jsonReturn;
-    }
+
+
 }

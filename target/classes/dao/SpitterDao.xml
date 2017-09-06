@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.SpitterDao">
+    <insert id="addSpitter" parameterType="model.Spitter" flushCache="true">
+        INSERT INTO spitter (username,userportrait,password,fullname,email,updatebyemail)
+        VALUES (#{username},#{userportrait},#{password},#{fullname},#{email},#{updatebyemail})
+    </insert>
+
+    <update id="saveSpitter" parameterType="model.Spitter" flushCache="true">
+        UPDATE spitter set username=#{username},userportrait=#{userportrait},password=#{password},fullname=#{fullname},email=#{email},updatebyemail=#{updatebyemail}
+        where id=#{id}
+    </update>
 
     <resultMap id="spitterResultMap" type="model.Spitter">
         <id property="id" column="id" />
@@ -12,6 +21,27 @@
         <result property="updatebyemail" column="updatebyemail" jdbcType="TINYINT" javaType="boolean"/>
     </resultMap>
 
+    <select id="getSpitterById" parameterType="model.Spitter" resultMap="spitterResultMap" >
+        SELECT * FROM spitter WHERE id=#{id}
+    </select>
+
+    <select id="getSpitterByUsername" parameterType="String" resultMap="spitterResultMap">
+        SELECT * FROM spitter WHERE username=#{username}
+    </select>
+
+    <select id="findAllSpitters" resultType="model.Spitter">
+        SELECT * FROM spitter
+    </select>
+
+    <insert id="saveSpittle" parameterType="model.Spittle" flushCache="true">
+        INSERT INTO spittle (spitterid,spittername,text,whens)
+        VALUES (#{spitter.id},#{spitter.username},#{text},#{whens})
+    </insert>
+
+    <delete id="deleteSpittle" parameterType="int" >
+        DELETE FROM spittle where id=#{id}
+    </delete>
+
     <resultMap id="spittleResultMap" type="model.Spittle">
         <id property="id" column="id" />
         <result property="spitter.id" column="spitterid" />
@@ -20,12 +50,17 @@
         <result property="whens" column="whens" jdbcType="DATE" javaType="java.util.Date"/>
     </resultMap>
 
-    <resultMap id="commentResultMap" type="model.Comment">
-        <id property="id" column="id" />
-        <result property="spittleid" column="spittleid" />
-        <result property="name" column="name" />
-        <result property="comment" column="comment" />
-    </resultMap>
+    <select id="getSpittleById" parameterType="int" resultMap="spittleResultMap">
+        SELECT * FROM spittle where id=#{id}
+    </select>
+
+    <select id="getRecentSpittle" parameterType="int" resultMap="spittleResultMap" >
+        SELECT * FROM spittle  ORDER BY whens DESC LiMIT #{int};
+    </select>
+
+    <select id="getSpittlesForSpitter" parameterType="model.Spitter" resultMap="spittleResultMap" >
+        SELECT * FROM spittle where spittername=#{username}
+    </select>
 
     <resultMap id="banchOfSpittleResultMap" type="model.Spittle">
         <id property="id" column="id" />
@@ -38,56 +73,13 @@
         </association>
     </resultMap>
 
-    <insert id="addSpitter" parameterType="model.Spitter" flushCache="true">
-        INSERT INTO spitter (username,userportrait,password,fullname,email,updatebyemail)
-        VALUES (#{username},#{userportrait},#{password},#{fullname},#{email},#{updatebyemail})
-    </insert>
-
-    <insert id="saveSpittle" parameterType="model.Spittle" flushCache="true">
-        INSERT INTO spittle (spitterid,spittername,text,whens)
-        VALUES (#{spitter.id},#{spitter.username},#{text},#{whens})
-    </insert>
-
-    <update id="saveSpitter" parameterType="model.Spitter" flushCache="true">
-        UPDATE spitter set username=#{username},userportrait=#{userportrait},password=#{password},fullname=#{fullname},email=#{email},updatebyemail=#{updatebyemail}
-        where id=#{id}
-    </update>
-
-    <select id="getSpitterById" parameterType="model.Spitter" resultMap="spitterResultMap" >
-        SELECT * FROM spitter WHERE id=#{id}
-    </select>
-
-    <select id="getRecentSpittle" parameterType="int" resultMap="spittleResultMap" >
-        SELECT * FROM spittle  ORDER BY whens DESC LiMIT #{int};
-    </select>
-
-    <select id="getSpittlesForSpitter" parameterType="model.Spitter" resultMap="spittleResultMap" >
-        SELECT * FROM spittle where spittername=#{username}
-    </select>
-
-    <select id="getSpitterByUsername" parameterType="String" resultMap="spitterResultMap">
-        SELECT * FROM spitter WHERE username=#{username}
-    </select>
-
-    <delete id="deleteSpittle" parameterType="int" >
-        DELETE FROM spittle where id=#{id}
-    </delete>
-
-    <select id="getSpittleById" parameterType="int" resultMap="spittleResultMap">
-        SELECT * FROM spittle where id=#{id}
-    </select>
-
-    <select id="findAllSpitters" resultType="model.Spitter">
-        SELECT * FROM spitter
-    </select>
-
     <select id="getABunchOfSpittles" parameterType="int" resultMap="banchOfSpittleResultMap">
         SELECT el.id,
-               el.text,
-               el.whens,
-               el.spitterid,
-               el.spittername,
-               er.userportrait
+        el.text,
+        el.whens,
+        el.spitterid,
+        el.spittername,
+        er.userportrait
         FROM spittle el
         LEFT JOIN spitter er on er.id = el.spitterid
         order by RAND() limit #{int};
@@ -97,9 +89,15 @@
         SELECT * FROM spittle where spittername=#{username};
     </select>
 
+    <resultMap id="commentResultMap" type="model.Comment">
+        <id property="id" column="id" />
+        <result property="spittleid" column="spittleid" />
+        <result property="name" column="name" />
+        <result property="comment" column="comment" />
+    </resultMap>
+
     <select id="findAllConments" resultMap="commentResultMap">
         SELECT * FROM comment where spittleid in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
     </select>
-
 </mapper>
