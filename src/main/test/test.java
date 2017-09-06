@@ -51,7 +51,7 @@ public class test {
         comment.setSpittleid(5);
         comment.setComment("ceshi");
         comment.setName("Aalto");
-        List<Comment> x1 = spittleDao.selectCommnetBySpittleId(7);
+        List<Comment> x1 = spittleDao.selectCommentBySpittleId(7);
         Gson gson = new GsonBuilder().create();
         gson.toJson(x1,System.out);
     }

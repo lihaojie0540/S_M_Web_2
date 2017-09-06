@@ -17,6 +17,7 @@ public interface SpitterService {
     void saveSpittle(Spittle spittle);
     void deleteSpittle(int id);
     Spittle getSpittleById(int id);
+    Spittle findSpittleByCommentid(int id);
     List<Spittle> getRecentSpittles(int count);
     List<Spittle> getSpittlesForSpitter(Spitter spitter);
     List<Spittle> getSpittlesForSpitter(String username);
@@ -24,5 +25,5 @@ public interface SpitterService {
     void addComment(Comment comment);
     void deleteComment(int id);
     List<Comment> getAllComments(List<Integer> a);
-    List<Comment> finCommentBySpittleId(int id);
+    List<Comment> findCommentBySpittleId(int id);
 }

@@ -61,6 +61,10 @@ public class SpitterServiceImpl implements SpitterService {
         return spitterDao.getSpittleById(id);
     }
 
+    public Spittle findSpittleByCommentid(int id){
+        return spittleDao.findSpittleByCommentid(id);
+    }
+
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List<Spittle> getRecentSpittles(int count) {
         List<Spittle> spittles = spitterDao.getABunchOfSpittles(count);
@@ -88,7 +92,7 @@ public class SpitterServiceImpl implements SpitterService {
         spittleDao.deleteComment(id);
     }
 
-    public List<Comment> finCommentBySpittleId(int id) {
-        return  spittleDao.selectCommnetBySpittleId(id);
+    public List<Comment> findCommentBySpittleId(int id) {
+        return  spittleDao.selectCommentBySpittleId(id);
     }
 }

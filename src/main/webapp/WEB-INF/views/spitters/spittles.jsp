@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page isELIgnored="false" %>
 <div>
-    <h2>Spittle for ${spitter.username}.</h2>
+    <h2 >Spittle for ${spitter.username}.</h2>
     <table class="horizontalRuled" cellspacing="15">
         <c:forEach var="spittle" items="${modelsl}" >
             <s:url var="spitter_url" value="/spitters/${spittle.spitter.username}"  />
@@ -32,7 +32,7 @@
                 <td></td>
                 <td id="spitComment${spittle.id}" style="display: none">
                     <div class="input-group" >
-                        <input id="spitCommentIn" type="text" class="form-control">
+                        <input id="spitCommentIn" type="text" class="form-control" onfocus="x12">
                         <span id="spitComment" class="input-group-addon" onclick="commentsUp(${spittle.id})">coment it.</span>
                     </div>
                 </td>
@@ -41,32 +41,50 @@
     </table>
 </div>
 <script type="text/javascript">
+    function commentsDelete(d,u) {
+        $(function () {
+            alert("d="+d+" u="+u)
+            var formData = new FormData();
+            formData.append("commentid",d);
+            $.ajax({
+                url: "${pageContext.request.contextPath}/updateComment",
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(Data){
+                    var content = "";
+                    console.info("update");
+                    console.info(Data);
+                    $.each(JSON.parse(Data),function (idx,obj) {
+                        content += "<a>" + obj.name
+                                +"</a><br>" + obj.comment
+                                +"<br><button class=\"btn btn-primary\" onclick=\"commentsDelete(" + obj.id + "," + obj.spittleid
+                                +")\">delete</button><br>";
+                    });
+                    document.getElementById("forDetail" + u).innerHTML = content;
+                    $('#spitCommentIn').val("");
+                },error: function(Data){
+                    alert("error");
+                }
+            })
+        });
+    }
 
     function commentsShow(i){
         var content = "";
         <c:forEach items="${modelcom}" var="comments" >
         if(i == ${comments.spittleid})
-            content += "<h4>"+"${comments.name}"+"</h4>"+"${comments.comment}";
+            content += "<a>${comments.name}</a><br>${comments.comment}<br><button class=\"btn btn-primary\" onclick=\"commentsDelete(${comments.id})\">delete</button><br>";
         </c:forEach>
         document.getElementById("forDetail" + i).innerHTML = content;
-        var comment = document.getElementById("spitComment"+i);
-        comment.style.display = "";
+        document.getElementById("spitComment"+i).style.display="";
     }
 
-    function spittleEdit(){
-
-    }
-
-    function spittleDelete(i) {
-        if(confirm("Are you sure you want to delete this spittle?")) {
-            document["deleteSpittle_" + i].submit();
-        }
-    }
-
-    function commentsUp(w) {
+    function commentsUp(u) {
         $(function () {
             var formData = new FormData();
-            formData.append("spittleId",w);
+            formData.append("spittleId",u);
             formData.append("spitterId",${sessionSpitter.id});
             formData.append("comment",$('#spitCommentIn').val());
             $.ajax({
@@ -77,10 +95,15 @@
                 contentType: false,
                 success: function(Data){
                     var content = "";
+                    console.info("upload");
+                    console.info(Data);
                     $.each(JSON.parse(Data),function (idx,obj) {
-                        content += "<h4>"+obj.name+"</h4>"+obj.comment;
+                        content += "<a>" + obj.name
+                                  +"</a><br>" + obj.comment
+                                  +"<br><button class=\"btn btn-primary\" onclick=\"commentsDelete(" + obj.id + "," + obj.spittleid
+                                  +")\">delete</button><br>";
                     });
-                    document.getElementById("forDetail" + w).innerHTML = content;
+                    document.getElementById("forDetail" + u).innerHTML = content;
                     $('#spitCommentIn').val("");
                 },error: function(Data){
                     alert("error");
@@ -89,10 +112,14 @@
         });
     }
 
-    $(function () {
-        $.session.set('name', '${spitter.username}');
-        $.session.set('portrait', '${spitter.userportrait}');
-    });
+    function spittleDelete(i) {
+        if(confirm("Are you sure you want to delete this spittle?")) {
+            document["deleteSpittle_" + i].submit();
+        }
+    }
+
+    function spittleEdit(){
+    }
 </script>
 
 

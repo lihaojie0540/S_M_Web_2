@@ -21,9 +21,11 @@ public interface SpittleDao {
 
     Spittle findspitter(int id);
 
+    Spittle findSpittleByCommentid(int id);
+
     void addComment(Comment comment);
 
     void deleteComment(int id);
 
-    List<Comment>selectCommnetBySpittleId(int id);
+    List<Comment>selectCommentBySpittleId(int id);
 }

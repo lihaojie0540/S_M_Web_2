@@ -55,6 +55,10 @@
         SELECT spittername from spittle where id = #{id}
     </select>
 
+    <select id="findSpittleByCommentid" parameterType="int" resultMap="spittleResultMap">
+        SELECT * from spittle sp,comment co where sp.id = co.spittleid and co.id=#{id}
+    </select>
+
     <insert id="addComment" parameterType="model.Comment" flushCache="true">
         INSERT INTO comment (id,spittleid,name,comment) VALUES (#{id},#{spittleid},#{name},#{comment})
     </insert>
@@ -70,7 +74,7 @@
         <result property="comment" column="comment" />
     </resultMap>
 
-    <select id="selectCommnetBySpittleId" parameterType="int" resultMap="commentResultMap">
+    <select id="selectCommentBySpittleId" parameterType="int" resultMap="commentResultMap">
         SELECT * FROM comment where spittleid=#{id}
     </select>
 </mapper>

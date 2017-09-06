@@ -32,6 +32,21 @@ public class HomeController {
     private SpitterService spitterServiceImpl;
 
     /**
+     * @Description  删除后的更新
+     * @Date: 下午4:33 17-9-6
+     */
+    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
+    @ResponseBody
+    public String upadte(@RequestParam(required = false) String commentid) {
+        int a = Integer.parseInt(commentid);
+        Spittle spittle = spitterServiceImpl.findSpittleByCommentid(a);
+        spitterServiceImpl.deleteComment(a);
+        List<Comment> comments = spitterServiceImpl.findCommentBySpittleId(spittle.getId());
+        Gson gson = new Gson();
+        return gson.toJson(comments);
+    }
+
+    /**
      * @Description 供评论测试使用
      * @Date: 下午4:23 17-8-25
      */
@@ -48,7 +63,7 @@ public class HomeController {
         if (!comment.equals("")) {
             spitterServiceImpl.addComment(acomment);
         }
-        List<Comment> comments = spitterServiceImpl.finCommentBySpittleId(a);
+        List<Comment> comments = spitterServiceImpl.findCommentBySpittleId(a);
         Gson gson = new Gson();
         return gson.toJson(comments);
     }
@@ -120,10 +135,4 @@ public class HomeController {
         model.addAttribute(spitter);
         return "register";
     }
-
-
-
-
-
-
 }

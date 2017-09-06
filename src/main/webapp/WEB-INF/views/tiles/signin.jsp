@@ -2,7 +2,6 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ page isELIgnored="false" %>
-
 <h2 >Hello, ${sessionSpitter.username}</h2>
 <div>
     <img src="/spitter/resources/images/${sessionSpitter.userportrait}" width="256" border="0" align="middle"/>
@@ -27,8 +26,4 @@
         <a href="/spitter/home">login out</a>
     </span>
 </div>
-
-<script>
-
-</script>
 
